@@ -58,7 +58,7 @@ $ mpm --update
 Test compiling a sample document: (this will download some packages
 if you enabled on-the-fly package installation)
 ```
-pdflatex sample2e
+$ pdflatex sample2e
 ```
 
 ## Troubleshooting
