@@ -1,0 +1,15 @@
+#!/bin/sh -e
+
+export DESTDIR="$1"
+
+cmake -B build \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DWITH_UI_QT=0 \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DMIKTEX_LINUX_DIST=kiss \
+    -DMIKTEX_USER_LINK_TARGET_DIR="~/.local/bin" \
+    -DWITH_MAN_PAGES=ON \
+    -DWITH_MIKTEX_DOC=OFF
+
+cmake --build   build
+cmake --install build

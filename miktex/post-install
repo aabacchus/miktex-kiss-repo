@@ -1,0 +1,29 @@
+#!/bin/sh -e
+
+cat << EOF
+To finish installing MiKTeX, run the following commands as root.
+To install MiKTeX just for your user, run everything without --admin
+and not as root.
+
+# mpm --admin --update-db
+
+Enable on-the-fly package installation:
+# initexmf --admin --set-config-value [MPM]AutoInstall=1
+# initexmf --admin --update-fndb
+
+Create symlinks to executables (eg. pdflatex):
+# initexmf --admin --mklinks
+
+Install packages to /usr/local/share:
+# mpm --admin --verbose --package-level=basic --upgrade
+# initexmf --admin --mkmaps
+# initexmf --admin --update-fndb
+
+Finally, update the databases (you'll probably have to run these several times)
+# mpm --admin --update
+$ mpm --update
+
+If anything fails, it's probably a network error, so try again.
+Also check the documentation at https://miktex.org/howto/build-unx
+
+EOF
