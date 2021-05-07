@@ -13,3 +13,6 @@ automake -af
     --prefix=/usr
 make
 make DESTDIR="$1" install
+
+# remove non-english manpage (i know, :/)
+rm -fr "$1/usr/share/man/hu"
