@@ -10,7 +10,8 @@ fontconfig
 freetype-harfbuzz
 fribidi
 gd
-gettext
+#gettext
+gettext-tiny
 gmp
 graphite
 graphite-harfbuzz

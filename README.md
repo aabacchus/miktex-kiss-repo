@@ -7,6 +7,14 @@ It works, but I intend to try to remove more of the dependencies.
 MiKTeX provides a package manager which can install packages as they are needed
 at compilation time ("on-the-fly").
 
+## NEWS
+
+This package of MiKTeX now uses [gettext-tiny] instead of gettext. This is much
+more lightweight than the GNU version, weighing in at 340 kB compared to 19 MB.
+Of course, it is less featureful, so gettext itself is still present if you want.
+I'm undecided as to whether to make it replace gettext by name also or continue
+to have a separate package. Let me know if you have any thoughts.
+
 ## Installation
 
 To use, clone the repo and add it to `KISS_PATH`, then run:
@@ -74,3 +82,5 @@ The output of `initexmf --report`, both with and without
 root privileges and `--admin`, may be useful.
 
 Feel free to open an issue.
+
+[gettext-tiny]: https://github.com/sabotage-linux/gettext-tiny
