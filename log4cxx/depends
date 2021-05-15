@@ -1,4 +1,5 @@
 apr
 apr-util
+cmake make
 expat
 util-linux
