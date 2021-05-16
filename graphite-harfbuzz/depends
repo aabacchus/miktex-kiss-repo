@@ -1,3 +1,5 @@
 freetype-harfbuzz
 graphite
 icu
+meson make
+samurai make
