@@ -1,1 +1,5 @@
+bash make
+cmake make
+python make
+zip make
 zlib
