@@ -31,5 +31,8 @@ meson \
 ninja -C output
 ninja -C output install
 
-install -Dt "$1/usr/include/harfbuzz" tmp/usr/include/harfbuzz/hb-graphite2.h
-install -Dt "$1/usr/lib"              tmp/usr/lib/libharfbuzz*
+install -Dm644 -t "$1/usr/include/harfbuzz" tmp/usr/include/harfbuzz/hb-graphite2.h
+install -Dm644 -t "$1/usr/include/harfbuzz" tmp/usr/lib/pkgconfig/harfbuzz.pc
+# copy, rather than install, to preserve symlinks and different perms
+mkdir -p "$1/usr/lib"
+cp    -pd tmp/usr/lib/libharfbuzz* "$1/usr/lib"

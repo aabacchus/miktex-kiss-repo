@@ -1,5 +1,15 @@
 #!/bin/sh -e
 
-echo "This package is a bit messy and replaces your system harfbuzz libs"
-echo "with kiss-alternatives. I wouln't trust me with such important files,"
-echo "so be careful, because I might not have updated this properly."
+cat << EOF
+########################################################################
+#                                                                      #
+# This package is a bit messy and replaces your system harfbuzz libs   #
+# with kiss-alternatives. I wouln't trust me with such important files,#
+# so be careful, because I might not have updated this properly.       #
+#                                                                      #
+# To build MiKTeX, you'll need to run the following command:           #
+#                                                                      #
+# $ kiss a | grep graphite-harfbuzz | kiss a -                         #
+#                                                                      #
+########################################################################
+EOF

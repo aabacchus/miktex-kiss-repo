@@ -26,7 +26,18 @@ to have a separate package. Let me know if you have any thoughts.
 
 To use, clone the repo and add it to `KISS_PATH`, then run:
 ```
-$ kiss b miktex && kiss i miktex
+$ kiss b graphite-harfbuzz
+```
+This will take a moment, then print a message telling you to run kiss-alternatives.
+MiKTeX needs the harfbuzz font libraries to be built with graphite support,
+so now run:
+```
+$ kiss a | grep graphite-harfbuzz | kiss a -
+```
+to switch the necessary libraries to include graphite support.
+Now, you can sit back and run
+```
+$ kiss b miktex
 ```
 This might take a while.
 
