@@ -5,7 +5,10 @@ the MiKTeX distribution of TeX (other dependencies are in the official repos).
 It works, but I intend to try to remove more of the dependencies.
 
 MiKTeX provides a package manager which can install packages as they are needed
-at compilation time ("on-the-fly").
+at compilation time ("on-the-fly"), which helps to keep the installed size
+small(er).
+
+NOTE: TeX Live, another TeX distribution, has also been packaged for KISS.
 
 ## NEWS
 
@@ -28,9 +31,9 @@ To use, clone the repo and add it to `KISS_PATH`, then run:
 ```
 $ kiss b graphite-harfbuzz
 ```
-This will take a moment, then print a message telling you to run kiss-alternatives.
-MiKTeX needs the harfbuzz font libraries to be built with graphite support,
-so now run:
+This will take a moment, then print a message telling you to run
+`kiss alternatives`. MiKTeX needs the harfbuzz font libraries to be built with
+graphite support, so now run:
 ```
 $ kiss a | grep graphite-harfbuzz | kiss a -
 ```
