@@ -9,6 +9,13 @@ at compilation time ("on-the-fly").
 
 ## NEWS
 
+### log4cxx
+log4cxx 0.12.0 has been released upstream, including some changes to the version
+of C++ being used, and MiKTeX's build is currently incompatible with it (see the 
+[issue upstream]).
+Therefore, log4cxx has not been updated (yet).
+
+### gettext-tiny
 This package of MiKTeX now uses [gettext-tiny] instead of gettext. This is much
 more lightweight than the GNU version, weighing in at 340 kB compared to 19 MB.
 Of course, it is less featureful, so gettext itself is still present if you want.
@@ -84,3 +91,4 @@ root privileges and `--admin`, may be useful.
 Feel free to open an issue.
 
 [gettext-tiny]: https://github.com/sabotage-linux/gettext-tiny
+[issue upstream]: https://github.com/MiKTeX/miktex/issues/817
