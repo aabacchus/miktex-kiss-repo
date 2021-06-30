@@ -22,7 +22,7 @@ libjpeg-turbo
 libmspack
 libpng
 libressl
-libXslt
+libxslt
 log4cxx
 mpfr
 pixman
