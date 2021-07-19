@@ -15,6 +15,7 @@ NOTE: TeX Live, another TeX distribution, has also been packaged for KISS.
 ### MiKTeX 21.6.28
 The latest release of MiKTeX uses a C++ class which is not implemented for Linux
 (yet). See the issue [here].
+**Fixed with latest release (21.7)**
 
 ### log4cxx
 log4cxx 0.12.0 has been released upstream, including some changes to the version
