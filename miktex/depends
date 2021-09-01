@@ -21,10 +21,10 @@ icu
 libjpeg-turbo
 libmspack
 libpng
-libressl
 libxslt
 log4cxx
 mpfr
+openssl
 pixman
 poppler
 popt
