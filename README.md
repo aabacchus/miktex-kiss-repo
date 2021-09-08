@@ -22,6 +22,7 @@ log4cxx 0.12.0 has been released upstream, including some changes to the version
 of C++ being used, and MiKTeX's build is currently incompatible with it (see the 
 [issue upstream]).
 Therefore, log4cxx has not been updated (yet).
+**This seems to be fixed now. log4cxx has been updated and it all builds for me.**
 
 ### gettext-tiny
 This package of MiKTeX now uses [gettext-tiny] instead of gettext. This is much

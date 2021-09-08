@@ -1,7 +1,5 @@
 apr
 apr-util
-autoconf make
-automake make
+cmake make
 expat
-libtool make
 util-linux

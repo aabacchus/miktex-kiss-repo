@@ -1,7 +1,15 @@
 #!/bin/sh -e
 
-./autogen.sh
-./configure --prefix=/usr
+export DESTDIR="$1"
+cmake -B build \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_INSTALL_LIBDIR=lib \
+    -DBUILD_TESTING=off
 
-make
-make DESTDIR="$1" install
+cmake --build   build
+cmake --install build
+
+# correct location of cmake and pkgconfig files
+mv  "$1/usr/share/cmake" "$1/usr/share/pkgconfig" \
+    "$1/usr/lib/"
+rmdir "$1/usr/share/"
