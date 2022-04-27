@@ -15,7 +15,6 @@ gettext-tiny
 gmp
 graphite
 graphite-harfbuzz
-harfbuzz-icu
 hunspell
 icu
 libjpeg-turbo
