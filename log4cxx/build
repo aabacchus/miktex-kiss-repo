@@ -8,8 +8,3 @@ cmake -B build \
 
 cmake --build   build
 cmake --install build
-
-# correct location of cmake and pkgconfig files
-mv  "$1/usr/share/cmake" "$1/usr/share/pkgconfig" \
-    "$1/usr/lib/"
-rmdir "$1/usr/share/"
