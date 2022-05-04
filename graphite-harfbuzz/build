@@ -1,8 +1,8 @@
 #!/bin/sh -e
 
-# miktex requires harfbuzz to be built with graphite.
+# miktex requires harfbuzz to be built with graphite and ICU.
 # This build tries to add the graphite integration to a system already using
-# both freetype and icu in its harfbuzz.
+# freetype in its harfbuzz.
 
 # Point Harfbuzz to the Freetype files.
 export CFLAGS="$CFLAGS -I/usr/include/freetype2"
@@ -10,7 +10,7 @@ export CXXFLAGS="$CXXFLAGS -I/usr/include/freetype2"
 export LDFLAGS="$LDFLAGS -L/usr/lib"
 
 # Will store the built package's files to
-# allow us to cherry-pick the graphite related files.
+# allow us to cherry-pick the graphite and ICU related files.
 mkdir -p tmp
 export DESTDIR="$PWD/tmp"
 
@@ -25,14 +25,27 @@ meson \
     -Dbenchmark=disabled \
     -Dcairo=disabled \
     -Ddocs=disabled \
+    -Dtests=disabled \
     -Dgraphite=enabled \
     . output
 
 ninja -C output
 ninja -C output install
 
-install -Dm644 -t "$1/usr/include/harfbuzz" tmp/usr/include/harfbuzz/hb-graphite2.h
-install -Dm644 -t "$1/usr/include/harfbuzz" tmp/usr/lib/pkgconfig/harfbuzz.pc
-# copy, rather than install, to preserve symlinks and different perms
-mkdir -p "$1/usr/lib"
-cp    -pd tmp/usr/lib/libharfbuzz* "$1/usr/lib"
+mkdir -p \
+    "$1/usr/include/harfbuzz" \
+    "$1/usr/lib/pkgconfig" \
+    "$1/usr/lib/cmake/harfbuzz"
+
+cp  tmp/usr/include/harfbuzz/hb-graphite2.h \
+    tmp/usr/include/harfbuzz/hb-icu.h \
+    "$1/usr/include/harfbuzz"
+
+cp  tmp/usr/lib/pkgconfig/harfbuzz.pc \
+    tmp/usr/lib/pkgconfig/harfbuzz-icu.pc \
+    "$1/usr/lib/pkgconfig"
+
+cp  tmp/usr/lib/cmake/harfbuzz/harfbuzz-config.cmake \
+    "$1/usr/lib/cmake/harfbuzz"
+
+cp -P tmp/usr/lib/libharfbuzz* "$1/usr/lib"
