@@ -15,6 +15,7 @@ NOTE: TeX Live, another TeX distribution, has also been packaged for KISS.
 ### MiKTeX 21.6.28
 The latest release of MiKTeX uses a C++ class which is not implemented for Linux
 (yet). See the issue [here].
+
 **Fixed with latest release (21.7)**
 
 ### log4cxx
@@ -22,14 +23,13 @@ log4cxx 0.12.0 has been released upstream, including some changes to the version
 of C++ being used, and MiKTeX's build is currently incompatible with it (see the 
 [issue upstream]).
 Therefore, log4cxx has not been updated (yet).
+
 **This seems to be fixed now. log4cxx has been updated and it all builds for me.**
 
 ### gettext-tiny
 This package of MiKTeX now uses [gettext-tiny] instead of gettext. This is much
 more lightweight than the GNU version, weighing in at 340 kB compared to 19 MB.
-Of course, it is less featureful, so gettext itself is still present if you want.
-I'm undecided as to whether to make it replace gettext by name also or continue
-to have a separate package. Let me know if you have any thoughts.
+Of course, it is less featureful.
 
 ## Installation
 
