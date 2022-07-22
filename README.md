@@ -35,6 +35,16 @@ Of course, it is less featureful.
 
 To use, clone the repo and add it to `KISS_PATH`, then run:
 ```
+$ cd boost && kiss b
+```
+This builds the version of boost from this repo, which includes locale support. (Keep
+that in mind when a boost update comes along - or put this repo earlier in `KISS_PATH`
+than the community repo.
+By the way, I really do intend to patch out all the locale requirements from MiKTeX.
+One day.
+
+Next,
+```
 $ kiss b graphite-harfbuzz
 ```
 This will take a moment, then print a message telling you to run
