@@ -2,7 +2,8 @@
 
 This is a repository which provides all the necessary dependencies to build
 the MiKTeX distribution of TeX (other dependencies are in the official repos).
-It works, but I intend to try to remove more of the dependencies.
+It worked but I'm no longer maintaining it, so you may wish to bump version
+numbers etc.
 
 MiKTeX provides a package manager which can install packages as they are needed
 at compilation time ("on-the-fly"), which helps to keep the installed size
